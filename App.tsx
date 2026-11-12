@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -25,7 +26,10 @@ export default function App() {
         ))}
       </ScrollView>
 
-      <View style={styles.footer}>{button}</View>
+      {/* box-none: the gradient itself should let taps through to the rows behind it */}
+      <LinearGradient colors={COLORS} pointerEvents="box-none" style={styles.footer}>
+        {button}
+      </LinearGradient>
     </View>
   );
 }
