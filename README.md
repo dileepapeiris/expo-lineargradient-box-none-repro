@@ -36,3 +36,7 @@ Each tap was sent with `adb shell input tap` and the status line read back from 
 | Row 13, under the fade | Row 13 | **still Row 9** | Row 13 |
 | Footer button | Footer button | Footer button | Footer button |
 | Row 13 again | Row 13 | **still Footer button** | Row 13 |
+
+Rows visible through the fade never receive the tap in the bug layout. Rows outside the gradient
+and the gradient's own child keep working, so only `box-none` on the gradient itself is broken.
+Raw tap logs: `media/bug-box-none.txt`, `media/workaround-sibling.txt`.
