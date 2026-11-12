@@ -11,3 +11,9 @@ Recorded on the Android emulator Medium_Phone_API_37.0, Android 17 (API 37), 11/
 npm install
 npx expo run:android   # development build, Android emulator or device
 ```
+
+## What the screen shows
+
+A scrollable list of 30 pressable rows and a footer pinned to the bottom. The footer is a
+`LinearGradient` from transparent to white with `pointerEvents="box-none"`, 160 px of fade above a
+"Footer button". The status line at the top shows the last thing that was tapped.
