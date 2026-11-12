@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const ROWS = Array.from({ length: 30 }, (_, index) => `Row ${index + 1}`);
 
@@ -9,6 +9,14 @@ export default function App() {
   return (
     <View style={styles.screen}>
       <Text style={styles.status}>Last tapped: {lastTapped}</Text>
+
+      <ScrollView contentContainerStyle={styles.list}>
+        {ROWS.map((row) => (
+          <Pressable key={row} style={styles.row} onPress={() => setLastTapped(row)}>
+            <Text>{row}</Text>
+          </Pressable>
+        ))}
+      </ScrollView>
     </View>
   );
 }
