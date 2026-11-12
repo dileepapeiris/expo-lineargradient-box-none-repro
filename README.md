@@ -17,3 +17,10 @@ npx expo run:android   # development build, Android emulator or device
 A scrollable list of 30 pressable rows and a footer pinned to the bottom. The footer is a
 `LinearGradient` from transparent to white with `pointerEvents="box-none"`, 160 px of fade above a
 "Footer button". The status line at the top shows the last thing that was tapped.
+
+The switch under the status line swaps the footer between the two layouts:
+
+| Switch | Footer |
+| --- | --- |
+| off (bug) | `<LinearGradient pointerEvents="box-none">` wrapping the button, as in the issue |
+| on (workaround) | `<View pointerEvents="box-none">` with the gradient as a `pointerEvents="none"` sibling |
