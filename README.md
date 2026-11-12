@@ -40,3 +40,9 @@ Each tap was sent with `adb shell input tap` and the status line read back from 
 Rows visible through the fade never receive the tap in the bug layout. Rows outside the gradient
 and the gradient's own child keep working, so only `box-none` on the gradient itself is broken.
 Raw tap logs: `media/bug-box-none.txt`, `media/workaround-sibling.txt`.
+
+## Media
+
+![Row 13 tap, bug and workaround side by side](media/row13-tap-side-by-side.png)
+
+![Whole tap sequence, bug and workaround side by side](media/bug-vs-workaround-side-by-side.gif)
