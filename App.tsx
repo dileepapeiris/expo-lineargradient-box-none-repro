@@ -7,6 +7,7 @@ const COLORS = ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.9)'] as const;
 
 export default function App() {
   const [lastTapped, setLastTapped] = useState('nothing yet');
+  const [workaround, setWorkaround] = useState(false);
 
   const button = (
     <Pressable style={styles.button} onPress={() => setLastTapped('Footer button')}>
@@ -37,6 +38,14 @@ export default function App() {
 const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: 48, backgroundColor: '#fff' },
   status: { padding: 16, fontSize: 18, fontWeight: '600' },
+  toggle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingBottom: 8,
+  },
+  toggleLabel: { fontSize: 14, color: '#444' },
   list: { paddingBottom: 240 },
   row: { padding: 16, borderBottomWidth: 1, borderColor: '#ddd' },
   footer: {
