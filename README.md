@@ -46,3 +46,7 @@ Raw tap logs: `media/bug-box-none.txt`, `media/workaround-sibling.txt`.
 ![Row 13 tap, bug and workaround side by side](media/row13-tap-side-by-side.png)
 
 ![Whole tap sequence, bug and workaround side by side](media/bug-vs-workaround-side-by-side.gif)
+
+Screen recordings with touch indicators: `media/bug-box-none.mp4` and `media/workaround-sibling.mp4`.
+Per-step screenshots: `media/bug-box-none-*.png` and `media/workaround-sibling-*.png`.
+Emulator details: `media/emulator-android-version.txt`.
