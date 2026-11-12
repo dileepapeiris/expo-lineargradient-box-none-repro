@@ -33,10 +33,18 @@ export default function App() {
         ))}
       </ScrollView>
 
-      {/* box-none: the gradient itself should let taps through to the rows behind it */}
-      <LinearGradient colors={COLORS} pointerEvents="box-none" style={styles.footer}>
-        {button}
-      </LinearGradient>
+      {workaround ? (
+        // Workaround: the gradient is a sibling with pointerEvents="none" inside a box-none View
+        <View pointerEvents="box-none" style={styles.footer}>
+          <LinearGradient colors={COLORS} pointerEvents="none" style={StyleSheet.absoluteFill} />
+          {button}
+        </View>
+      ) : (
+        // box-none: the gradient itself should let taps through to the rows behind it
+        <LinearGradient colors={COLORS} pointerEvents="box-none" style={styles.footer}>
+          {button}
+        </LinearGradient>
+      )}
     </View>
   );
 }
