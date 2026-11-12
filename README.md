@@ -24,3 +24,15 @@ The switch under the status line swaps the footer between the two layouts:
 | --- | --- |
 | off (bug) | `<LinearGradient pointerEvents="box-none">` wrapping the button, as in the issue |
 | on (workaround) | `<View pointerEvents="box-none">` with the gradient as a `pointerEvents="none"` sibling |
+
+## Result
+
+Each tap was sent with `adb shell input tap` and the status line read back from the view hierarchy.
+
+| Tap | Expected | Bug layout | Workaround layout |
+| --- | --- | --- | --- |
+| Row 9, outside the gradient | Row 9 | Row 9 | Row 9 |
+| Row 12, under the fade | Row 12 | **still Row 9** | Row 12 |
+| Row 13, under the fade | Row 13 | **still Row 9** | Row 13 |
+| Footer button | Footer button | Footer button | Footer button |
+| Row 13 again | Row 13 | **still Footer button** | Row 13 |
