@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const ROWS = Array.from({ length: 30 }, (_, index) => `Row ${index + 1}`);
+const COLORS = ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.9)'] as const;
 
 export default function App() {
   const [lastTapped, setLastTapped] = useState('nothing yet');
@@ -26,4 +27,13 @@ const styles = StyleSheet.create({
   status: { padding: 16, fontSize: 18, fontWeight: '600' },
   list: { paddingBottom: 240 },
   row: { padding: 16, borderBottomWidth: 1, borderColor: '#ddd' },
+  footer: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    left: 0,
+    paddingTop: 160,
+    paddingHorizontal: 16,
+    paddingBottom: 32,
+  },
 });
