@@ -59,3 +59,14 @@ native `ExpoLinearGradient` view as a `StyleSheet.absoluteFill` child without it
 `ReactPointerEventsView`, so React Native's touch targeting treats it as `pointerEvents="auto"`.
 The native view becomes the touch target across the whole gradient and the touch never reaches
 the rows behind it. iOS renders the native view directly with the props, so it is not affected.
+
+## Workaround
+
+Render the gradient as a sibling inside your own container, which is what the switch turns on:
+
+```tsx
+<View pointerEvents="box-none" style={footerStyle}>
+  <LinearGradient pointerEvents="none" style={StyleSheet.absoluteFill} colors={colors} />
+  {children}
+</View>
+```
