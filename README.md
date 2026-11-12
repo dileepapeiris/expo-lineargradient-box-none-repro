@@ -50,3 +50,12 @@ Raw tap logs: `media/bug-box-none.txt`, `media/workaround-sibling.txt`.
 Screen recordings with touch indicators: `media/bug-box-none.mp4` and `media/workaround-sibling.mp4`.
 Per-step screenshots: `media/bug-box-none-*.png` and `media/workaround-sibling-*.png`.
 Emulator details: `media/emulator-android-version.txt`.
+
+## Likely cause
+
+`NativeLinearGradient.android.tsx` spreads `pointerEvents` onto a wrapper `View` and renders the
+native `ExpoLinearGradient` view as a `StyleSheet.absoluteFill` child without it. The native
+`LinearGradientView` extends a plain `android.view.View` and does not implement
+`ReactPointerEventsView`, so React Native's touch targeting treats it as `pointerEvents="auto"`.
+The native view becomes the touch target across the whole gradient and the touch never reaches
+the rows behind it. iOS renders the native view directly with the props, so it is not affected.
