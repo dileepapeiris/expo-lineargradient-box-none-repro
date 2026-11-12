@@ -36,4 +36,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingBottom: 32,
   },
+  button: { padding: 16, borderRadius: 8, alignItems: 'center', backgroundColor: '#222' },
+  buttonText: { color: '#fff', fontWeight: '600' },
 });
