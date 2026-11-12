@@ -7,6 +7,12 @@ const COLORS = ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.9)'] as const;
 export default function App() {
   const [lastTapped, setLastTapped] = useState('nothing yet');
 
+  const button = (
+    <Pressable style={styles.button} onPress={() => setLastTapped('Footer button')}>
+      <Text style={styles.buttonText}>Footer button</Text>
+    </Pressable>
+  );
+
   return (
     <View style={styles.screen}>
       <Text style={styles.status}>Last tapped: {lastTapped}</Text>
@@ -18,6 +24,8 @@ export default function App() {
           </Pressable>
         ))}
       </ScrollView>
+
+      <View style={styles.footer}>{button}</View>
     </View>
   );
 }
