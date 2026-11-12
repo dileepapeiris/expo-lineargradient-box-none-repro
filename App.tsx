@@ -1,6 +1,6 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
 const ROWS = Array.from({ length: 30 }, (_, index) => `Row ${index + 1}`);
 const COLORS = ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.9)'] as const;
@@ -18,6 +18,12 @@ export default function App() {
   return (
     <View style={styles.screen}>
       <Text style={styles.status}>Last tapped: {lastTapped}</Text>
+      <View style={styles.toggle}>
+        <Text style={styles.toggleLabel}>
+          {workaround ? 'Workaround: gradient as a sibling' : 'Bug: gradient with box-none'}
+        </Text>
+        <Switch value={workaround} onValueChange={setWorkaround} />
+      </View>
 
       <ScrollView contentContainerStyle={styles.list}>
         {ROWS.map((row) => (
