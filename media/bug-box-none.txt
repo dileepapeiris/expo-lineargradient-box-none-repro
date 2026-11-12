@@ -1,0 +1,5 @@
+tap Row 9 (outside gradient) -> Last tapped: Row 9
+tap Row 12 (under gradient fade) -> Last tapped: Row 9
+tap Row 13 (under gradient fade) -> Last tapped: Row 9
+tap Footer button (gradient child) -> Last tapped: Footer button
+tap Row 13 (under gradient fade) again -> Last tapped: Footer button
