@@ -1,0 +1,5 @@
+Emulator: Medium_Phone_API_37.0
+Android: 17 (API 37)
+Build: CE2A.260420.019
+Screen: 1080x2400, density 420
+Date: 11/12/26
